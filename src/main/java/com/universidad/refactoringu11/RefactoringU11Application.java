@@ -1,4 +1,4 @@
-package com.universidad.refactoring_u11;
+package com.universidad.refactoringu11;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
