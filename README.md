@@ -73,6 +73,7 @@ Este comando realiza las siguientes verificaciones:
 - Verifica que las dependencias entre paquetes cumplan las reglas arquitectónicas establecidas.
 
 **Resultado esperado:** 15 pruebas ejecutadas correctamente (14 pruebas de negocio y 1 prueba de arquitectura).
+<img width="1920" height="1080" alt="WuwaTappo_G6KkB5c43r" src="https://github.com/user-attachments/assets/cb5d0a56-3531-4914-84af-4861156e8684" />
 
 ---
 
@@ -83,6 +84,8 @@ La siguiente tabla presenta la evolución de la arquitectura antes y después de
 | **Estado** | **Diagrama de dependencias** | **Resultado de ArchUnit** |
 |:---|:---:|:---:|
 | **Antes (Dependencia cíclica)** | `inventario ↔ reportes` | ❌ `BUILD FAILURE` |
+<img width="1920" height="1080" alt="WuwaTappo_YQc9OW0ne1" src="https://github.com/user-attachments/assets/ad97959b-c9ba-414c-baf2-6fa2c6a8a49b" />
+
 | **Después (Aplicación del DIP)** | `inventario ← reportes` | ✅ `BUILD SUCCESS` |
 
 ### Interpretación de los resultados
@@ -143,6 +146,16 @@ Las siguientes herramientas fueron utilizadas para el desarrollo, refactorizaci�
 | GitHub | Alojamiento y gestión del repositorio. |
 
 ---
+
+## Capturas
+
+<img width="1920" height="1080" alt="WuwaTappo_YVuUaRHl3i" src="https://github.com/user-attachments/assets/33983cfa-1ba4-460b-81cf-0976ef3e7ede" />
+<img width="1920" height="1080" alt="WuwaTappo_LW2K5e5NDQ" src="https://github.com/user-attachments/assets/6f5cacf5-2b54-485d-8f81-7819b1e6cb03" />
+<img width="1920" height="1080" alt="WuwaTappo_Wh0NdlPitt" src="https://github.com/user-attachments/assets/447be45b-4327-40a8-8089-ca7e9756311e" />
+<img width="1920" height="1080" alt="WuwaTappo_YQc9OW0ne1" src="https://github.com/user-attachments/assets/d8e6448a-bdb9-4057-a6d0-8673e1f19856" />
+<img width="1920" height="1080" alt="WuwaTappo_G6KkB5c43r" src="https://github.com/user-attachments/assets/36d63e23-1110-4b74-a479-ea574e9603fa" />
+<img width="1920" height="1080" alt="WuwaTappo_lYnkKPpJXV" src="https://github.com/user-attachments/assets/47a679a7-b86b-420a-961b-836f42af59da" />
+
 
 ## Conclusiones
 
