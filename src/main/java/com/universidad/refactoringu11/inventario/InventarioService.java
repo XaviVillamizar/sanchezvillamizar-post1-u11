@@ -1,6 +1,5 @@
 package com.universidad.refactoringu11.inventario;
 
-import com.universidad.refactoringu11.reportes.ReporteBajoStockService; // Acoplamiento intencional
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -11,12 +10,11 @@ public class InventarioService {
     private final List<Producto> productos = new ArrayList<>();
     private final List<String> movimientos = new ArrayList<>();
     
-    // Colaborador opcional
-    private ReporteBajoStockService reporteBajoStockService;
+    private NotificadorBajoStock notificador; // Depende de la abstracción, sin importar reportes
 
     @Autowired(required = false)
-    public void setReporteBajoStockService(ReporteBajoStockService reporteBajoStockService) {
-        this.reporteBajoStockService = reporteBajoStockService;
+    public void setNotificador(NotificadorBajoStock notificador) {
+        this.notificador = notificador;
     }
 
     public void agregarProducto(Producto producto) {
@@ -65,9 +63,9 @@ public class InventarioService {
         if (nuevoStock <= producto.getStockMinimo()) {
             int cantidadReorden = calcularCantidadReorden(producto.getStockMinimo(), nuevoStock);
             
-            // Nueva lógica de acoplamiento con reportes
-            if (reporteBajoStockService != null) {
-                System.out.println(reporteBajoStockService.generarReporte());
+            // Delegamos en la interfaz
+            if (notificador != null) {
+                notificador.notificar(producto, cantidadReorden);
             }
 
             System.out.println("ALERTA: " + producto.getNombre()
